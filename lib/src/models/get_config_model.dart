@@ -1,6 +1,5 @@
 import 'package:hive/hive.dart';
 part 'get_config_model.g.dart';
-
 @HiveType(typeId: 0)
 class GetConfigModel {
   @HiveField(0)
@@ -10,14 +9,14 @@ class GetConfigModel {
 
   GetConfigModel({this.appConfig, this.adsConfig});
 
-  factory GetConfigModel.fromJson(Map<String, dynamic> json) {
+ factory GetConfigModel.fromJson(Map<String, dynamic> json) {
     return GetConfigModel(
-      appConfig: json['app_config'] != null
-          ? new AppConfig.fromJson(json['app_config'])
-          : null,
-      adsConfig: json['ads_config'] != null
-          ? new AdsConfig.fromJson(json['ads_config'])
-          : null,
+        appConfig : json['app_config'] != null
+            ? new AppConfig.fromJson(json['app_config'])
+            : null,
+        adsConfig : json['ads_config'] != null
+        ? new AdsConfig.fromJson(json['ads_config'])
+       : null,
     );
   }
 
@@ -49,11 +48,11 @@ class AppConfig {
   final allowUnauthorizedMeetingCode;
   AppConfig(
       {this.appName,
-      this.appMode,
-      this.jitsiServer,
-      this.meetingPrefix,
-      this.mandatoryLogin,
-      this.allowUnauthorizedMeetingCode});
+        this.appMode,
+        this.jitsiServer,
+        this.meetingPrefix,
+        this.mandatoryLogin,
+        this.allowUnauthorizedMeetingCode});
 
   factory AppConfig.fromJson(Map<String, dynamic> json) {
     return AppConfig(
@@ -93,18 +92,18 @@ class AdsConfig {
 
   AdsConfig(
       {this.adsEnable,
-      this.mobileAdsNetwork,
-      this.admobAppId,
-      this.admobBannerAdsId,
-      this.admobInterstitialAdsId});
+        this.mobileAdsNetwork,
+        this.admobAppId,
+        this.admobBannerAdsId,
+        this.admobInterstitialAdsId});
 
   factory AdsConfig.fromJson(Map<String, dynamic> json) {
     return AdsConfig(
-      adsEnable: json['ads_enable'],
-      mobileAdsNetwork: json['mobile_ads_network'],
+      adsEnable :json['ads_enable'],
+      mobileAdsNetwork:json['mobile_ads_network'],
       admobAppId: json['admob_app_id'],
       admobBannerAdsId: json['admob_banner_ads_id'],
-      admobInterstitialAdsId: json['admob_interstitial_ads_id'],
+      admobInterstitialAdsId : json['admob_interstitial_ads_id'],
     );
   }
 
@@ -118,3 +117,6 @@ class AdsConfig {
     return data;
   }
 }
+
+
+
